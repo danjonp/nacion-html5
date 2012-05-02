@@ -24,7 +24,7 @@
 			<section id="drawingArea">
 				<div id="drawingData">
 					<span id="drawingCounter">4</span>
-					<span id="drawingCurrentWord">casa</span>
+					<span id="drawingCurrentWord" contentEditable>casa</span>
 				</div>
 				
 				<ul id="drawingColors">
@@ -47,12 +47,17 @@
 					<li id="eraser"></li>
 					<li id="trash" data-message="¿Quer&eacute;s borrar el dibujo? Metodus no se hace responsable :P">x</li>
 					<li id="done">OK</li>
+					<li id="music">&#9836;</li>
 				</ul>
 				
 				<details>
 					<summary>¿C&oacute;mo funciona?</summary>
 					Dibuja la palabra que sale arriba... Si quer&eacute;s otra, dale click a la palabra :P
 				</details>
+				
+				<audio id="backgroundMusic" preload="auto" controls autobuffer>
+					<source src="index.mp3" />
+				</audio>
 			</section>
 			
 			<section id="drawingHistory">

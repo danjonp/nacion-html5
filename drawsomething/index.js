@@ -11,6 +11,7 @@ Metodus.courses.nacion.html5.DrawSomething = (function(){
 
 	var _current_color = "#000",
 		_current_pencil_size = 20,
+		_current_history = [],
 	
 	
 	_init = function()
@@ -20,6 +21,9 @@ Metodus.courses.nacion.html5.DrawSomething = (function(){
 		_preparePencils();
 		_prepareEraser();
 		_prepareTrash();
+		_prepareMusic();
+		_prepareSave();
+		_loadHistory();
 	},
 	
 	
@@ -106,6 +110,68 @@ Metodus.courses.nacion.html5.DrawSomething = (function(){
 			if ( confirm($(this).data("message")) )
 				canvas[0].width = canvas[0].width;
 		});
+	},
+	
+	
+	
+	_prepareMusic = function()
+	{
+		var background_music = $("#backgroundMusic")[0],
+			is_playing = false;
+		
+		$("#music").click(function(event){
+			event.preventDefault();
+			
+			if ( is_playing )
+			{
+				is_playing = false;
+				background_music.pause();
+			}
+			else
+			{
+				is_playing = true;
+				background_music.play();
+			}
+		});
+	},
+	
+	
+	_prepareSave = function()
+	{
+		$("#done").click(function(event){
+			event.preventDefault();
+			
+			var img = $("<img></img>"),
+				src = $("#drawingCanvas")[0].toDataURL("image/png");
+				
+			img.attr("id", Date.now());
+			img.attr("src", src);
+			
+			$("#drawingHistory").append(img);
+			$("#drawingCanvas")[0].width = $("#drawingCanvas")[0].width;
+			
+			_current_history.push(src);
+			localStorage.setItem("draw_history", $.stringify(_current_history));
+		});
+	},
+	
+	
+	
+	_loadHistory = function()
+	{
+		var data = localStorage.getItem("draw_history"),
+			history = $("#drawingHistory");
+			
+		if ( data != null )
+		{
+			_current_history = data = $.parseJSON(data);
+			
+			for(var index in data)
+			{
+				var img = $("<img></img>").attr("id", Date.now()).attr("src", data[index]);
+				history.append(img);
+			}
+		}
 	};
 	
 	

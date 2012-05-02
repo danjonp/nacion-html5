@@ -132,6 +132,17 @@
 				{
 				}
 		
+		#drawingHistory
+		{
+			height: auto;
+			margin: 0 auto;
+			width: 300px;
+		}
+			
+			#drawingHistory > IMG
+			{
+				border: 4px dashed #e4ecf3;
+			}
 		
 .wireFrame
 {

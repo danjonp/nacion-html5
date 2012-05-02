@@ -1,0 +1,139 @@
+#app
+{
+	height: auto;
+	margin: 30px auto 0 auto;
+	min-height: 500px;
+	width: 700px;
+}
+
+	#drawingArea
+	{
+		height: auto;
+		margin: 0 auto;
+		position: relative;
+		width: 300px;
+	}
+	
+		#drawingData
+		{
+			display: inline;
+			height: 30px;
+			position: relative;
+		}
+			
+			#drawingCounter
+			{
+				background-color: #8aaddc;
+				color: #eaedf1;
+				float: left;
+				font-size: 30px;
+				font-weight: bold;
+				height: 30px;
+				text-align: center;
+				width: 30px;
+			}
+			
+			#drawingCurrentWord
+			{
+				background-color: #e5effc;
+				color: #5d8dce;
+				float: right;
+				font-size: 30px;
+				font-weight: bold;
+				height: 30px;
+				text-align: center;
+				width: 270px;
+			}
+			
+		#drawingColors
+		{
+			clear: both;
+			list-style-type: none;
+			height: 30px;
+			margin: 10px auto 10px auto;
+			padding: 0;	
+			width: 100%;
+		}
+		
+			#drawingColors > LI
+			{
+				background: black;
+				border-radius: 30px;
+				display: inline-block;
+				cursor: pointer;
+				height: 30px;
+				padding: 0;
+				width: 30px;
+			}
+		
+		#drawingCanvas
+		{
+			background: #fff;
+			border: 4px dashed #e4ecf3;
+			cursor: crosshair;
+			height: 400px;
+			width: 300px;
+		}
+		
+		#drawingControls
+		{
+			list-style-type: none;
+			height: 30px;
+			margin: 10px auto 10px auto;
+			padding: 0;
+			width: 100%;
+		}
+			
+			#drawingControls > LI
+			{
+				display: inline-block;
+				cursor: pointer;
+				padding: 0;
+			}
+			
+				#pencilBig
+				{
+					background: #000;
+					border-radius: 30px;
+					height: 30px;
+					width: 30px;
+				}
+				
+				#pencilMedium
+				{
+					background: #000;
+					border-radius: 20px;
+					height: 20px;
+					width: 20px;
+				}
+				
+				#pencilSmall
+				{
+					background: #000;
+					border-radius: 10px;
+					height: 10px;
+					width: 10px;
+				}
+				
+				#eraser
+				{
+					background-color: #db9d9d;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+					height: 20px;
+					width: 20px;
+				}
+				
+				#trash
+				{
+				}
+				
+				#done
+				{
+				}
+		
+		
+.wireFrame
+{
+	border: 1px dashed red;
+}

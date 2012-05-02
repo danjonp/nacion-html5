@@ -3,5 +3,57 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>DrawSomething para la Naci&oacute;n</title>
-	</head>	
+		<link rel="stylesheet" href="../_lib/css/normalize.css" />
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	
+	<body>
+		<section id="app">
+			
+			<section id="drawingArea">
+				<div id="drawingData">
+					<span id="drawingCounter">7</span>
+					<span id="drawingCurrentWord" contenteditable>palabra</span>
+				</div>
+				
+				<ul id="drawingColors">
+					<li data-color="#000" title="Negro"></li>
+					<li data-color="#6d3107" title="Caf&eacute;"></li>
+					<li data-color="#d60505" title="Rojo"></li>
+					<li data-color="#feea1f" title="Amarillo"></li>
+					<li data-color="#56d83b" title="Verde"></li>
+					<li data-color="#1c85d9" title="Azul"></li>
+					<li data-color="#9512e7" title="Morado"></li>
+					<li data-color="#aeaeae" title="Gris"></li>
+				</ul>
+				
+				<canvas id="drawingCanvas" width="300" height="400"></canvas>
+				
+				<ul id="drawingControls">
+					<li id="pencilBig" data-size="30"></li>
+					<li id="pencilMedium" data-size="20"></li>
+					<li id="pencilSmall" data-size="10"></li>
+					<li id="eraser"></li>
+					<li id="trash" data-message="¿Estas seguro?">X</li>
+					<li id="done">Ok</li>
+					<li id="music">&#9836;</li>
+				</ul>
+				
+				<details>
+					<summary>¿Como funciona?</summary>
+					Dibuja la palabra que sale arriba... Si queres, guardala.
+				</details>
+				
+				<audio id="backgroundMusic" preload="auto" controls autobuffer>
+					<source src="index.mp3" />
+				</audio>
+				
+				
+			</section>
+			
+		</section>
+		
+		<script src="../_lib/js/jquery.js"></script>
+		<script src="index.js"></script>
+	</body>
 </html>

@@ -14,6 +14,7 @@ Metodus.courses.nacion.html5.DrawSomething = (function(){
 	var _current_color = "#000",
 		_current_pencil_size = 20,
 		_current_word_element = $("#drawingCurrentWord"),
+		_current_history = [],
 	
 	
 	
@@ -26,6 +27,7 @@ Metodus.courses.nacion.html5.DrawSomething = (function(){
 		_prepareEraser();
 		_prepareTrash();
 		_prepareSave();
+		_loadHistory();
 	},
 	
 	
@@ -127,15 +129,39 @@ Metodus.courses.nacion.html5.DrawSomething = (function(){
 	_prepareSave = function()
 	{
 		$("#done").click(function(event){
-			
-			var img = $("<img></img>");
+			var img = $("<img></img>"),
+				src = $("#drawingCanvas")[0].toDataURL("image/png");
 			
 			img.attr("id", Date.now());
-			img.attr("src", $("#drawingCanvas")[0].toDataURL("image/png"));
+			img.attr("src", src);
+			
+			_current_history.push(src);
 			
 			$("#drawingHistory").append(img);
 			$("#drawingCanvas")[0].width = $("#drawingCanvas")[0].width;
+			
+			localStorage.setItem("draw_history", $.stringify(_current_history));
 		});
+	},
+	
+	
+	
+	
+	_loadHistory = function()
+	{
+		var data = localStorage.getItem("draw_history"),
+			history = $("#drawingHistory");
+		
+		if ( data != null )
+		{
+			_current_history = data = $.parseJSON(data);
+			
+			for(var index in data)
+			{
+				var img = $("<img></img>").attr("id", Date.now()).attr("src", data[index]);
+				history.append(img);
+			}
+		}
 	};
 
 

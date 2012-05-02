@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- <html lang="es" manifest="index.appcache"> -->
+<html lang="es">
+	<head>
+		<meta charset="utf-8">	
+		<title>DrawSomething - Naci&oacute;n</title>
+		<link rel="stylesheet" href="../_lib/css/normalize.css" />
+		<link rel="stylesheet" href="index.css" />
+
+		<!--[if lt IE 9]>
+		<script src="../_lib/css/html5.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+	
+		<section id="app">
+		
+			<!--
+			<hgroup>
+				<h1>Drawsomething casero</h1>
+				<h2>Curso HTML5 Nacion por Metodus</h2>
+			</hgroup>
+			-->
+			
+			<section id="drawingArea">
+				<div id="drawingData">
+					<span id="drawingCounter">4</span>
+					<span id="drawingCurrentWord">casa</span>
+				</div>
+				
+				<ul id="drawingColors">
+					<li data-color="#000" title="Negro"></li>
+					<li data-color="#6d3107" title="Café"></li>
+					<li data-color="#d60505" title="Rojo"></li>
+					<li data-color="#feea1f" title="Amarillo"></li>
+					<li data-color="#56d83b" title="Verde"></li>
+					<li data-color="#1c85d9" title="Azul"></li>
+					<li data-color="#9512e7" title="Morado"></li>
+					<li data-color="#aeaeae" title="Gris"></li>
+				</ul>
+				
+				<canvas id="drawingCanvas" width="300" height="400"></canvas>
+				
+				<ul id="drawingControls">
+					<li id="pencilBig" data-size="30"></li>
+					<li id="pencilMedium" data-size="20"></li>
+					<li id="pencilSmall" data-size="10"></li>
+					<li id="eraser"></li>
+					<li id="trash" data-message="¿Quer&eacute;s borrar el dibujo? Metodus no se hace responsable :P">x</li>
+					<li id="done">OK</li>
+				</ul>
+				
+				<details>
+					<summary>¿C&oacute;mo funciona?</summary>
+					Dibuja la palabra que sale arriba... Si quer&eacute;s otra, dale click a la palabra :P
+				</details>
+			</section>
+			
+			<section id="drawingHistory">
+			</section>
+			
+			<!-- 
+			
+			<aside>
+			</aside>
+			
+			
+			
+			
+			
+			<footer>
+			</footer>
+			-->
+		</section>
+		
+		<script src="../_lib/js/jquery.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>

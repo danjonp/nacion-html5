@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# Versión (Si esto cambia, el browser regenera el caché)
+
+
+CACHE:
+index.css
+index.html
+index.js
+index.mp3
+
+FALLBACK:
+/ /offline.html
+
+
+NETWORK:
+save.php
